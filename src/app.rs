@@ -297,7 +297,7 @@ impl App {
                     }
                     let index = 4 * (n_x + j + WIDTH * (n_y + i));
                     if !flipped {
-                        let check = frame[index] | frame[index + 1] | frame[index + 2];
+                        let check = frame[index] & 0xFF | frame[index + 1] & 0xFF | frame[index + 2] & 0xFF;
                         if check > 0 {
                             flipped = true;
                         }
