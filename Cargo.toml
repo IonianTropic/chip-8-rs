@@ -1,0 +1,10 @@
+[package]
+name = "chip-8-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cpal = "=0.15.3"
+pixels = "0.14.0"
+rodio = "0.20.1"
+winit = { version = "0.30.7", features = ["rwh_05"] }  
