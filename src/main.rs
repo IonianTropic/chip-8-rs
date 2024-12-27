@@ -1,4 +1,5 @@
 #![feature(random)]
+#![allow(clippy::precedence)]
 
 use app::App;
 use winit::event_loop::{ControlFlow, EventLoop};

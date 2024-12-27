@@ -287,9 +287,9 @@ impl App {
             .enumerate()
         {
             for j in 0..8 {
-                if row & (1 << (7 - j) >> (7 - j)) == 1 {
+                if (row & (1 << (7 - j))) >> (7 - j) == 1 {
                     // flip (x+j, y+i) -> 4*(x+j+width*(y+i))
-                    if (n_x + j) >= WIDTH {
+                    if (n_x) >= WIDTH {
                         continue;
                     }
                     if (n_y + i) >= HEIGHT {
@@ -297,7 +297,8 @@ impl App {
                     }
                     let index = 4 * (n_x + j + WIDTH * (n_y + i));
                     if !flipped {
-                        let check = frame[index] & 0xFF | frame[index + 1] & 0xFF | frame[index + 2] & 0xFF;
+                        let check =
+                            frame[index] | frame[index + 1] | frame[index + 2];
                         if check > 0 {
                             flipped = true;
                         }
