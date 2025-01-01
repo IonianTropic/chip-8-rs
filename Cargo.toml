@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 cpal = "=0.15.3"
+env_logger = "0.11.6"
+log = "0.4.22"
 pixels = "0.14.0"
 rodio = "0.20.1"
 winit = { version = "0.30.7", features = ["rwh_05"] }  
